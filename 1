@@ -10,3 +10,8 @@ import matplotlib.image as img
 def rgb2gray(m):
     gray =(m[:,:,0]*0.2989+m[:,:,1]*0,5870+m[:,:,2]*0.1140)
     return gray
+
+def Sobel_edge(m):
+    Gx=np.array([[1,0,-1],[2,0,-2],[1,0,-1]])
+    Gy=np-array([[1,2,1],[0,0,0],[-1,-2,-1]])
+    new_matrix=np.zeros_like(m)

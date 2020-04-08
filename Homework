@@ -15,3 +15,23 @@ def Sobel_edge(m):
     Gx=np.array([[1,0,-1],[2,0,-2],[1,0,-1]])
     Gy=np-array([[1,2,1],[0,0,0],[-1,-2,-1]])
     new_matrix=np.zeros_like(m)
+    for i in range(1,m.shape[0]-1):
+        for j in range(1,m.shape[1]-1):
+            pixels=m[i-1:i+2,j-1:j+2]
+            tmp1=Gx*pixels
+            tmp2=Gy*pixels
+            x=tmp1.sum()
+            y=tmp2.sum()
+            the=(x**2+y**2)**0.5
+            new_matrix[i,j]=the
+    return new_matrix
+
+image=img.imread("flowers.jpg")
+gray=rgb2gray(image)
+# plt.subplot(2,1,1)
+# plt.imshow(gray,cmap="gray")
+# plt.subplot(2,1,2)
+kek=Sobel_edge(gray)
+kek=(kek)
+plt.imshow(kek,cmap="gray")
+plt.show()

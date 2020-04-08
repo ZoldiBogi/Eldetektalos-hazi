@@ -2,3 +2,11 @@
 # Read in an image and create two maskfilters by using the Sobel operators
 # (https://en.wikipedia.org/wiki/Sobel_operator) and used them to detect the edges of the input
 # image.# 
+
+import numpy as np
+import matplotlib.pyplot as plt
+import matplotlib.image as img
+
+def rgb2gray(m):
+    gray =(m[:,:,0]*0.2989+m[:,:,1]*0,5870+m[:,:,2]*0.1140)
+    return gray

@@ -31,7 +31,10 @@ gray=rgb2gray(image)
 # plt.subplot(2,1,1)
 # plt.imshow(gray,cmap="gray")
 # plt.subplot(2,1,2)
-kek=Sobel_edge(gray)
-kek=(kek)
-plt.imshow(kek,cmap="gray")
+blue=Sobel_edge(gray)
+blue=(blue)
+plt.imshow(blue,cmap="gray")
 plt.show()
+
+#eddig error: for i in range(1,m.shape[0]-1):
+#AttributeError: 'tuple' object has no attribute 'shape'
